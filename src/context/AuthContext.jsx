@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { flushSync } from 'react-dom'
 import { resolveAuthenticatedEmail } from '../auth/allowedAccounts'
 import {
   AUTH_STORAGE_KEY,
@@ -42,10 +43,14 @@ export function AuthProvider({ children }) {
 
     const payload = createSessionPayload(canonicalEmail)
     localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(payload))
-    setUser({
-      email: payload.email,
-      token: payload.token,
-      expiresAt: payload.expiresAt,
+    // Évite que navigate('/dashboard') s’exécute avant la mise à jour du contexte
+    // (sinon ProtectedRoute voit encore isAuthenticated === false et renvoie vers /).
+    flushSync(() => {
+      setUser({
+        email: payload.email,
+        token: payload.token,
+        expiresAt: payload.expiresAt,
+      })
     })
     return { ok: true }
   }, [])
