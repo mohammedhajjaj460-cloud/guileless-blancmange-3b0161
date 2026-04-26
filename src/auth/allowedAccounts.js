@@ -16,13 +16,26 @@ function normalizePassword(value) {
   return stripInvisible(value).trim()
 }
 
+/**
+ * Mot de passe de connexion démo (page d’accueil). Défini par VITE_DEMO_APP_PASSWORD
+ * (.env.local, variables de build Netlify). Ne doit jamais être identique à GAS_DISPATCH_SECRET
+ * (sinon le secrets scanning Netlify fait échouer le build).
+ */
+function demoPasswordFromEnv() {
+  return normalizePassword(import.meta.env.VITE_DEMO_APP_PASSWORD ?? '')
+}
+
 /** @type {ReadonlyArray<{ email: string; password: string }>} */
-const INTERNAL_ACCOUNTS = Object.freeze([
-  {
-    email: 'mohammedhajjaj460@gmail.com',
-    password: 'mohammed2003',
-  },
-])
+function internalAccounts() {
+  const p = demoPasswordFromEnv()
+  if (!p) return []
+  return [
+    {
+      email: 'mohammedhajjaj460@gmail.com',
+      password: p,
+    },
+  ]
+}
 
 /**
  * @returns {string | null} e-mail normalisé si la paire est valide, sinon null
@@ -32,7 +45,7 @@ export function resolveAuthenticatedEmail(email, password) {
   const p = normalizePassword(password)
   if (!e || !p) return null
 
-  const row = INTERNAL_ACCOUNTS.find(
+  const row = internalAccounts().find(
     (acc) => normalizeEmail(acc.email) === e && normalizePassword(acc.password) === p,
   )
   return row ? e : null
