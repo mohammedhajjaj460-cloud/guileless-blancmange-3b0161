@@ -1,0 +1,296 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease;
+}
+
+.brand:hover {
+  opacity: 0.92;
+}
+
+.logoImg {
+  height: 46px;
+  width: auto;
+  max-width: min(200px, 42vw);
+  object-fit: contain;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 0.15rem;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.9rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.link:hover {
+  color: var(--color-blue-dark);
+  background: var(--color-bg-muted);
+}
+
+.linkActive {
+  color: var(--color-blue-dark);
+  background: transparent;
+  border-bottom-color: var(--color-yellow);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.2s ease,
+    border-color 0.15s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-yellow);
+  box-shadow: 0 0 0 1px var(--color-yellow), var(--shadow-md);
+}
+
+.cta:active {
+  transform: translateY(1px);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.ctaSecondary:hover {
+  border-color: var(--color-yellow);
+  box-shadow: 0 0 0 1px var(--color-yellow);
+  background: var(--color-bg-muted);
+}
+
+.logout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-blue-dark);
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.logout:hover {
+  color: var(--color-primary);
+}
+
+.menuBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.menuBtn:hover {
+  background: var(--color-bg-muted);
+  border-color: rgba(10, 77, 158, 0.28);
+}
+
+.mobileOverlay {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .nav {
+    display: none;
+  }
+
+  .cta,
+  .ctaSecondary,
+  .logout {
+    display: none;
+  }
+
+  .menuBtn {
+    display: inline-flex;
+  }
+
+  .logoImg {
+    height: 40px;
+    max-width: min(180px, 52vw);
+  }
+
+  .mobileOverlay {
+    display: block;
+    position: fixed;
+    inset: var(--header-height) 0 0 0;
+    background: rgba(6, 48, 106, 0.38);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .mobileOpen {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .mobileLinks {
+    list-style: none;
+    margin: 0;
+    padding: 1rem 1.25rem 1.5rem;
+    background: var(--color-surface);
+    border-bottom: 3px solid var(--color-yellow);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-8px);
+    opacity: 0;
+    transition: transform 0.22s ease, opacity 0.22s ease;
+  }
+
+  .mobileOpen .mobileLinks {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .mobileLink {
+    display: block;
+    padding: 0.85rem 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid transparent;
+  }
+
+  .mobileLink:hover {
+    background: var(--color-bg-muted);
+  }
+
+  .mobileLinkActive {
+    color: var(--color-blue-dark);
+    background: var(--color-accent-soft);
+    border-left-color: var(--color-yellow);
+  }
+
+  .mobileCta {
+    display: block;
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.9rem 1rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--color-white);
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .mobileCta:hover {
+    background: var(--color-primary-hover);
+    border-color: var(--color-yellow);
+  }
+
+  .mobileLogout {
+    display: block;
+    width: 100%;
+    margin-top: 0.65rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    background: var(--color-white);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .mobileLogout:hover {
+    border-color: var(--color-yellow);
+  }
+}

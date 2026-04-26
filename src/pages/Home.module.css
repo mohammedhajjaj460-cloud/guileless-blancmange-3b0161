@@ -1,0 +1,292 @@
+.hero {
+  background: linear-gradient(
+    145deg,
+    var(--color-blue-dark) 0%,
+    var(--color-blue) 45%,
+    var(--color-blue-mid) 100%
+  );
+  color: var(--color-white);
+  padding: 3.25rem 1.25rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: min(55vw, 480px);
+  height: min(55vw, 480px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 204, 0, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroInner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.75fr);
+  gap: 2.5rem 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heroCopy {
+  max-width: 40rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+}
+
+.heroTitle {
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 4vw, 2.45rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: var(--color-white);
+}
+
+.heroSubtitle {
+  margin: 0 0 1.75rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 38rem;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-blue-dark);
+  background: var(--color-yellow);
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease, box-shadow 0.2s ease,
+    border-color 0.15s ease;
+}
+
+.btnPrimary:hover {
+  background: var(--color-yellow-bright);
+  border-color: var(--color-white);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.btnPrimary:active {
+  transform: translateY(1px);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.3rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  background: transparent;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-yellow);
+  color: var(--color-white);
+}
+
+.heroPanel {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.panelCard {
+  width: 100%;
+  max-width: 340px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.35rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-lg);
+}
+
+.panelLabel {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+  margin-bottom: 1rem;
+}
+
+.panelList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.panelList li {
+  position: relative;
+  padding-left: 1.15rem;
+}
+
+.panelList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-yellow);
+  box-shadow: 0 0 0 2px rgba(255, 204, 0, 0.35);
+}
+
+.section {
+  padding: 3.5rem 1.25rem;
+  background: var(--color-white);
+}
+
+.sectionInner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.sectionHead {
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-heading);
+}
+
+.sectionLead {
+  margin: 0;
+  font-size: 1.02rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.benefitsSection {
+  background: var(--color-white);
+  border-block: 1px solid var(--color-border);
+  box-shadow: inset 0 4px 0 var(--color-yellow);
+}
+
+.benefitList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.benefitItem {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 1.15rem 1.1rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.benefitItem:hover {
+  border-color: rgba(255, 204, 0, 0.65);
+  box-shadow: var(--shadow-md);
+}
+
+.benefitIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-soft);
+  color: var(--color-blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefitText {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+  }
+
+  .heroPanel {
+    justify-content: flex-start;
+  }
+
+  .panelCard {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 2.25rem;
+    padding-bottom: 3rem;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+  }
+}
