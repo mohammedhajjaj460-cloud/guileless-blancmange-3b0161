@@ -29,12 +29,9 @@ function demoPasswordFromEnv() {
 function internalAccounts() {
   const p = demoPasswordFromEnv()
   if (!p) return []
-  return [
-    {
-      email: 'mohammedhajjaj460@gmail.com',
-      password: p,
-    },
-  ]
+  /** Les deux orthographes (mohamed / mohammed) — même mot de passe. */
+  const emails = ['mohammedhajjaj460@gmail.com', 'mohamedhajjaj460@gmail.com']
+  return emails.map((email) => ({ email, password: p }))
 }
 
 /**
