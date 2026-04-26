@@ -1,0 +1,156 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  background: #f4f6f9;
+}
+
+.overlay {
+  display: none;
+}
+
+.aside {
+  width: 260px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 90;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12);
+}
+
+.asideOpen {
+  transform: translateX(0);
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin-left: 0;
+}
+
+@media (min-width: 1024px) {
+  .aside {
+    position: relative;
+    transform: none;
+    transition: none;
+    box-shadow: none;
+    min-height: 100vh;
+  }
+
+  .column {
+    margin-left: 0;
+  }
+
+  .overlay {
+    display: none !important;
+  }
+
+  .menuBtn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 85;
+    background: rgba(6, 48, 106, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .overlayVisible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 56px;
+  padding: 0 1rem 0 0.75rem;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  flex-shrink: 0;
+}
+
+.menuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-heading);
+  cursor: pointer;
+}
+
+.menuBtn:hover {
+  background: var(--color-bg-muted);
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+}
+
+.pageTitlePlaceholder {
+  flex: 1;
+}
+
+.main {
+  flex: 1;
+  padding: 1.5rem 1.25rem 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.subtitle {
+  margin: 0 0 1.5rem;
+  max-width: 65ch;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+}
+
+.footer {
+  flex-shrink: 0;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.footerSep {
+  opacity: 0.5;
+}

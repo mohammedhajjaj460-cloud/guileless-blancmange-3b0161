@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Garantit que le bundle client appelle `/.netlify/functions/gas-*` (évite `/__gas-*-proxy` si `NETLIFY` n’est pas vu par Vite).
+[build.environment]
+  VITE_GAS_NETLIFY_RELAY = "true"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

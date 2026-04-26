@@ -1,0 +1,961 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.sheetPanel {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.15rem 1.15rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.sheetPanelTitle {
+  margin: 0 0 0.45rem;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+}
+
+.sheetPanelLead {
+  margin: 0 0 1rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+  max-width: 52rem;
+}
+
+.sheetHeroAction {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin-bottom: 0.9rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(10, 77, 158, 0.08) 0%, rgba(10, 77, 158, 0.02) 100%);
+  border: 1px solid var(--color-border);
+}
+
+.sheetBtnHero {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.7rem 1.25rem;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.sheetBtnHero:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.sheetBtnHero:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.sheetBtnHero:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sheetHeroHint {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.sheetBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-muted);
+  font-size: 0.84rem;
+}
+
+.sheetLink {
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.sheetLink:hover {
+  text-decoration: underline;
+}
+
+.sheetStatus {
+  flex: 1;
+  min-width: 12rem;
+  color: var(--color-muted);
+}
+
+.sheetActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sheetBtn {
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  color: var(--color-heading);
+  cursor: pointer;
+}
+
+.sheetBtn:hover {
+  border-color: rgba(10, 77, 158, 0.35);
+}
+
+.sheetBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sheetNote {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: rgba(10, 77, 158, 0.05);
+  border: 1px solid var(--color-border);
+}
+
+.sheetBrowserNote {
+  margin: 0.65rem 0 0;
+  font-size: 0.78rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.75rem;
+}
+
+.sheetLinkBtn {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sheetLinkBtn:hover {
+  color: var(--color-primary-hover);
+}
+
+.sheetBrowserHint {
+  color: var(--color-muted);
+}
+
+.sheetConfigForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1rem 1.05rem;
+  margin-bottom: 0.85rem;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-primary);
+  background: rgba(10, 77, 158, 0.04);
+}
+
+.sheetConfigIntro {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.sheetConfigWebLead {
+  margin: 0 0 0.75rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--color-border);
+}
+
+.sheetConfigSteps {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.sheetConfigStep {
+  padding-left: 0.2rem;
+}
+
+.sheetConfigFieldNote {
+  margin: -0.35rem 0 0;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--color-heading);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--color-primary);
+  background: var(--color-accent-soft);
+}
+
+.sheetConfigLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+}
+
+.sheetConfigInput {
+  padding: 0.55rem 0.7rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  text-transform: none;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.sheetConfigInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.sheetConfigInputInvalid {
+  border-color: #c83c3c !important;
+  box-shadow: 0 0 0 2px rgba(200, 60, 60, 0.2) !important;
+}
+
+.sheetConfigSheetLinkBox {
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--color-border);
+  background: rgba(10, 77, 158, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sheetConfigSheetLinkTitle {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+}
+
+.sheetConfigSheetLinkLead {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.sheetConfigSheetLink {
+  font-size: 0.78rem;
+  word-break: break-all;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.sheetConfigSheetLink:hover {
+  color: var(--color-primary-hover);
+}
+
+.sheetConfigInlineErr {
+  margin: -0.25rem 0 0;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  font-weight: 600;
+  color: var(--color-heading);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid #c83c3c;
+  background: rgba(200, 60, 60, 0.1);
+}
+
+.sheetConfigError {
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 204, 0, 0.2);
+  border-left: 4px solid var(--color-yellow);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-blue-dark);
+}
+
+.sheetHint {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--color-border);
+  background: rgba(10, 77, 158, 0.03);
+}
+
+.sheetHint a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.sheetCode {
+  font-size: 0.78em;
+  font-family: ui-monospace, monospace;
+  background: rgba(10, 77, 158, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.section {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.h2 {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+}
+
+.intro {
+  margin: 0 0 1.15rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+  max-width: 78ch;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.presenceRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: rgba(10, 77, 158, 0.04);
+}
+
+.fieldGrow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: min(100%, 200px);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+}
+
+.input,
+.select {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.error {
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 204, 0, 0.2);
+  border-left: 4px solid var(--color-yellow);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-blue-dark);
+}
+
+.submit {
+  align-self: flex-start;
+  padding: 0.7rem 1.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: #fff;
+  background: var(--color-primary);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.submit:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-yellow);
+}
+
+.empty {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.tableEditHint {
+  margin: 0 0 0.85rem;
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.45;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.table th,
+.table td {
+  padding: 0.7rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.table thead th {
+  background: rgba(10, 77, 158, 0.06);
+  font-weight: 700;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.thNum {
+  text-align: center;
+}
+
+.thAction {
+  width: 48px;
+}
+
+.tdAction {
+  text-align: center;
+}
+
+.cellMuted {
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.cellStrong {
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.cellSmall {
+  font-size: 0.82rem;
+  color: var(--color-text);
+  max-width: 220px;
+}
+
+.cellAssign {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.inputCell,
+.selectCell {
+  width: 100%;
+  max-width: 13rem;
+  box-sizing: border-box;
+  padding: 0.35rem 0.45rem;
+  font: inherit;
+  font-size: 0.82rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+}
+
+.selectCellAssign {
+  max-width: 10rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.inputCell:focus,
+.selectCell:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-accent-soft);
+}
+
+.iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+.iconBtn:hover {
+  background: rgba(10, 77, 158, 0.08);
+  color: var(--color-heading);
+}
+
+.rowNote td {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  font-style: italic;
+  padding-top: 0.85rem;
+}
+
+.synthHint {
+  margin: 0 0 0.85rem;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+.sectionStats {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.35rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.statsH2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  letter-spacing: -0.03em;
+}
+
+.statsIntro {
+  margin: 0 0 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+  max-width: 52rem;
+}
+
+.statsToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.25rem;
+  margin-bottom: 1.35rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.statsTabs {
+  display: flex;
+  gap: 0.15rem;
+}
+
+.statsTab,
+.statsTabOn {
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.4rem 0.2rem;
+  margin-right: 1rem;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--color-muted);
+  cursor: pointer;
+  border-radius: 0;
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+
+.statsTab:hover {
+  color: var(--color-heading);
+}
+
+.statsTabOn {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.statsToolbarRight {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 0.85rem;
+}
+
+.statsCalWrap {
+  position: relative;
+}
+
+.statsLinkBtn {
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.35rem 0.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.statsLinkBtn:hover {
+  color: var(--color-primary-hover);
+}
+
+.statsMonthList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.statsMonthCard {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.statsMonthCardHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--color-bg-muted);
+}
+
+.statsMonthTitle {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+}
+
+.statsMonthKpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.statsKpi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.05rem;
+}
+
+.statsKpiVal {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--color-heading);
+}
+
+.statsKpiLbl {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.statsMonthGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0.85rem 1rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.65rem 1rem;
+}
+
+.statsMonthCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--color-border);
+}
+
+.statsMonthName {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+}
+
+.statsMonthNums {
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-heading);
+}
+
+.statsMonthNums strong {
+  font-weight: 800;
+}
+
+.statsMonthNums span:not(.statsMonthDot) {
+  font-weight: 600;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  margin-left: 0.2rem;
+}
+
+.statsMonthNums span:first-of-type strong {
+  margin-right: 0.15rem;
+}
+
+.statsMonthDot {
+  margin: 0 0.25rem !important;
+  color: var(--color-muted);
+  opacity: 0.5;
+}
+
+.statsMonthSummary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-muted);
+}
+
+.statsDayHint {
+  margin: 0 0 0.85rem;
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.statsDayHint strong {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.statsMonthSummaryLabel {
+  font-weight: 700;
+  color: var(--color-heading);
+  font-size: 0.92rem;
+}
+
+.statsMonthSummaryNums {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.statsMonthSummaryNums strong {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.statsDayGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.85rem;
+}
+
+.statsDayGridSingle {
+  grid-template-columns: 1fr;
+  max-width: 22rem;
+}
+
+.statsDayCard {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.statsDayCardHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--color-bg-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.statsDayTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+.statsDayTotals {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.statsDayTotalMain {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-heading);
+  line-height: 1.1;
+}
+
+.statsDayTotalSub {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.statsDayList {
+  list-style: none;
+  margin: 0;
+  padding: 0.65rem 1rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.statsDayRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.86rem;
+}
+
+.statsDayName {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.statsDayVals {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.statsDayCount {
+  font-weight: 800;
+  color: var(--color-heading);
+  min-width: 1.25rem;
+  text-align: right;
+}
+
+.statsDayEq {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.statDash {
+  color: var(--color-muted);
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
